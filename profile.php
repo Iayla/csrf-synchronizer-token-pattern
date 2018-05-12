@@ -81,7 +81,7 @@
 
           <?php
             if(!isset($_COOKIE['session_cookie'])) {
-              echo "<li><a href='user-logout.php'> Log Out </a></li>";
+              echo "<li><a href='logout.php'> Log Out </a></li>";
             }
           ?>
 
@@ -121,7 +121,7 @@
 
                         <?php if(isset($_COOKIE['S_cookie'])) {
                         echo "
-        						<form action='csrf-validate.php' method='POST' enctype='multipart/form-data'>
+        						<form action='validate.php' method='POST' enctype='multipart/form-data'>
                                     	<!-- CSRF Token -->
                                     	<input type='hidden' name='csrf_Token' id='csrf_Token' value=''>
                                         <!--  -->
@@ -163,7 +163,7 @@
 
         						var request="true";
         						$.ajax({
-        						url:"csrf-gen.php",
+        						url:"generate.php",
         						method:"POST",
         						data:{request:request},
         						dataType:"JSON",

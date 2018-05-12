@@ -109,7 +109,7 @@
       <p>
 
         <div class="container">
-            <div class="row" align="center" style="padding-top: 100px;">
+            <div class="row" align="center" style="padding-top: 25px;">
                 <div class="col-12">
 
                     <div class="card">
@@ -121,7 +121,7 @@
 
 
         						<?php
-        						if(isset($_COOKIE['session_cookie']))
+        						if(isset($_COOKIE['S_cookie']))
         						{
 
 
