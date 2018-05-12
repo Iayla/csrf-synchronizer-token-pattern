@@ -105,8 +105,85 @@
       <h> Using Synchronizer Token Pattern </h>
       <p>  </p>
       <hr>
-      <h3>Welcome !</h3>
-      <p> </p>
+      <h3> Update User Profile</h3>
+      <p>
+        <div class="container">
+            <div class="row" align="center" style="padding-top: 25px;">
+                <div class="col-12">
+
+                    <div class="card">
+                      <h5 class="card-header">Update Profile</h5>
+                      <div class="card-body">
+                            <div class="row">
+                                <div class="col-sm-2"></div>
+                                <div class="col-sm-8">
+
+
+                        <?php if(isset($_COOKIE['S_cookie'])) {
+                        echo "
+        						<form action='csrf-validate.php' method='POST' enctype='multipart/form-data'>
+                                    	<!-- CSRF Token -->
+                                    	<input type='hidden' name='csrf_Token' id='csrf_Token' value=''>
+                                        <!--  -->
+                                    <div class='form-group row'>
+                                    	<label for='name' class='col-sm-2 col-form-label'>Full Name</label>
+                                    <div class='col-sm-10'>
+                                        <input type='text' class='form-control' id='name' name='name' placeholder='Full Name' required>
+                                    </div>
+                                    </div>
+
+                                  	<div class='form-group row'>
+                                        <label for='university' class='col-sm-2 col-form-label'>University</label>
+                                    <div class='col-sm-10'>
+                                        <input type='text' class='form-control' id='university' name='university' placeholder='University' required>
+                                    </div>
+                                  	</div>
+
+        							<div class='form-group row'>
+                                        <label for='degree' class='col-sm-2 col-form-label'>Degree</label>
+                                    <div class='col-sm-10'>
+                                        <input type='text' class='form-control' id='degree' name='degree' placeholder='Degree' required>
+                                    </div>
+                                  	</div>
+
+                                  	<div class='form-group row'>
+                                        <label for='year' class='col-sm-2 col-form-label'>Year</label>
+                                    <div class='col-sm-10'>
+                                        <input type='number' class='form-control' id='year' name='year' placeholder='Year' required>
+                                    </div>
+                                  	</div>
+
+
+                                        <button type='submit' class='btn btn-success' id='submit' name='submit'>Submit</button>
+                               </form>";
+                        }
+                        ?>
+
+        						<script >
+
+        						var request="true";
+        						$.ajax({
+        						url:"csrf-gen.php",
+        						method:"POST",
+        						data:{request:request},
+        						dataType:"JSON",
+        						success:function(data)
+        						{
+        							document.getElementById("csrf_Token").value=data.token;
+        						}
+
+        						})
+        						</script>
+
+
+
+
+
+
+
+
+
+       </p>
     </div>
     <div class="col-sm-2 sidenav">
 
